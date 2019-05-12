@@ -1,7 +1,7 @@
 package collection;
 
 /*
-  Created by kishore on Apr, 2019;
+  Created by kkishore on Apr, 2019;
 */
 
 import java.util.Iterator;
@@ -10,20 +10,20 @@ import java.util.Spliterators;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-public interface ICollection<T> extends Iterable<T>{
+public interface ICollection<T> extends Iterable<T> {
 
-    boolean isEmpty();
+	boolean isEmpty();
 
-    void clear();
+	void clear();
 
-    int size();
+	int size();
 
-    T[] values();
+	T[] values();
 
-    Iterator<T> iterator();
+	Iterator<T> iterator();
 
-    default Stream<T> toStream(){
-        final var splitIterator = Spliterators.spliteratorUnknownSize(iterator(), Spliterator.IMMUTABLE);
-        return StreamSupport.stream(splitIterator, false);
-    }
+	default Stream<T> toStream() {
+		final var splitIterator = Spliterators.spliteratorUnknownSize(iterator(), Spliterator.IMMUTABLE);
+		return StreamSupport.stream(splitIterator, false);
+	}
 }

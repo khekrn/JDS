@@ -1,8 +1,9 @@
 package list.array;
 
-/*
-  Created by kishore on Apr, 2019;
-*/
+/**
+ * created by kkishore
+ */
 
 public class ArrayList {
+
 }
