@@ -50,4 +50,10 @@ public interface IList<T> extends ICollection<T> {
 			index++;
 		}
 	}
+	
+	default void rangeCheck(int index) {
+		if(index > size() || index < 0) {
+			throw new IndexOutOfBoundsException("Index: "+index+", Size: "+size());
+		}
+	}
 }
