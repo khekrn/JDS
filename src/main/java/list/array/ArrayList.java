@@ -63,7 +63,7 @@ public class ArrayList<T> implements IList<T>{
 
 	@Override
 	public Iterator<T> iterator() {
-		return null;
+		return ArrayIterator.createNewArrayIterator(this.data, this.size);
 	}
 
 	@Override
@@ -77,7 +77,12 @@ public class ArrayList<T> implements IList<T>{
 	public void addAt(int index, T item) {
 		Objects.requireNonNull(item);
 		this.rangeCheck(index);
-		//TODO
+		this.ensureCapacity(1);
+		if(index != this.size-1) {
+			System.arraycopy(this.data, index, this.data, index+1, this.size-index);
+		}
+		this.data[index] = item;
+		this.size++;
 	}
 
 	@Override
@@ -129,8 +134,13 @@ public class ArrayList<T> implements IList<T>{
 
 	@Override
 	public boolean removeAll(IList<T> list) {
-		// TODO Auto-generated method stub
-		return false;
+		var res = false;
+		for(final T item : list) {
+			if(this.remove(item)) {
+				res = true;
+			}
+		}
+		return res;
 	}
 
 	@Override
@@ -169,6 +179,25 @@ public class ArrayList<T> implements IList<T>{
 	@Override
 	public Object[] toArray() {
 		return Arrays.copyOf(this.data, this.size);
+	}
+	
+	public String toString(){
+		var iter = this.iterator();
+		if(!iter.hasNext()) {
+			return "[]";
+		}
+		
+		
+		var builder = new StringBuilder(this.size*3);
+		builder.append('[');
+		for(;;){
+			var item = iter.next();
+			builder.append(item);
+			if(!iter.hasNext()){
+				return builder.append(']').toString();
+			}
+			builder.append(",").append(" ");
+		}
 	}
 	
 	private void ensureCapacity(int k) {

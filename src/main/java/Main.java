@@ -23,6 +23,12 @@ public class Main {
 		
 		list.toStream().forEach(System.out::println);
 		
+		System.out.println("\n\n\n" + ", "+list);
+		
+		list.addAt(8, 80000);
+		
+		System.out.println(list);
+		
 	}
 
 }
