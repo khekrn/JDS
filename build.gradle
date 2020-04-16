@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'com.khekrn.algoj'
+group 'com.khekrn.jds'
 version '0.0.1'
 
 sourceCompatibility = 1.11
