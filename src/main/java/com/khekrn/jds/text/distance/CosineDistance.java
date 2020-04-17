@@ -15,11 +15,11 @@ public class CosineDistance extends AbstractText implements IText {
 
     private static final CosineSimilarity COSINE_SIMILARITY = CosineSimilarity.create();
 
-    private CosineDistance(){
+    private CosineDistance() {
 
     }
 
-    public static CosineDistance create(){
+    public static CosineDistance create() {
         return new CosineDistance();
     }
 

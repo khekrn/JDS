@@ -15,9 +15,9 @@ public class Main {
         String text2 = "i love java java";
 
         var res = cosineSimilarity.apply(text1, text2);
-        System.out.println("Similarity = "+res);
+        System.out.println("Similarity = " + res);
 
         var distance = CosineDistance.create();
-        System.out.println("Distance = "+distance.apply(text1, text2));
+        System.out.println("Distance = " + distance.apply(text1, text2));
     }
 }

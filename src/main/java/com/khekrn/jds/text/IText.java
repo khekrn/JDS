@@ -2,7 +2,7 @@ package com.khekrn.jds.text;
 
 /**
  * @author khekrn
- *
+ * <p>
  * Text related algorithms
  */
 @FunctionalInterface

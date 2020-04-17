@@ -22,7 +22,7 @@ public class CosineSimilarity extends AbstractText implements IText {
     private CosineSimilarity() {
     }
 
-    public static CosineSimilarity create(){
+    public static CosineSimilarity create() {
         return new CosineSimilarity();
     }
 
@@ -39,7 +39,7 @@ public class CosineSimilarity extends AbstractText implements IText {
         final var d1 = vectorDot(leftVector.values());
         final var d2 = vectorDot(rightVector.values());
 
-        if(d1 >= 0.0 && d2 >= 0.0){
+        if (d1 >= 0.0 && d2 >= 0.0) {
             cosineSimilarity = dotProduct / (d1 * d2);
         }
 
@@ -51,21 +51,21 @@ public class CosineSimilarity extends AbstractText implements IText {
         return DESCRIPTION;
     }
 
-    private Set<CharSequence> getIntersection(Map<CharSequence, Integer> leftVector, Map<CharSequence, Integer> rightVector){
+    private Set<CharSequence> getIntersection(Map<CharSequence, Integer> leftVector, Map<CharSequence, Integer> rightVector) {
         var intersectionSet = new HashSet<CharSequence>(leftVector.keySet());
         intersectionSet.retainAll(rightVector.keySet());
         return intersectionSet;
     }
 
-    private double dot(Map<CharSequence, Integer> leftVector, Map<CharSequence, Integer> rightVector, Set<CharSequence> intersection){
+    private double dot(Map<CharSequence, Integer> leftVector, Map<CharSequence, Integer> rightVector, Set<CharSequence> intersection) {
         double result = 0.0;
-        for(CharSequence word: intersection){
+        for (CharSequence word : intersection) {
             result += (leftVector.get(word) * rightVector.get(word));
         }
         return result;
     }
 
-    private double vectorDot(Collection<Integer> vectorValues){
+    private double vectorDot(Collection<Integer> vectorValues) {
         var sum = vectorValues.stream().mapToInt(x -> x).map(x -> x * x).sum();
         return Math.sqrt(sum);
     }
