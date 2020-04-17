@@ -1,5 +1,6 @@
 package com.khekrn.jds.app;
 
+import com.khekrn.jds.text.distance.CosineDistance;
 import com.khekrn.jds.text.similarity.CosineSimilarity;
 
 /**
@@ -15,5 +16,8 @@ public class Main {
 
         var res = cosineSimilarity.apply(text1, text2);
         System.out.println("Similarity = "+res);
+
+        var distance = CosineDistance.create();
+        System.out.println("Distance = "+distance.apply(text1, text2));
     }
 }
