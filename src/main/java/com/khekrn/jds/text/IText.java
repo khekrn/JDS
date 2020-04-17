@@ -1,7 +1,5 @@
 package com.khekrn.jds.text;
 
-import com.khekrn.jds.IDataStructure;
-
 /**
  * @author khekrn
  *

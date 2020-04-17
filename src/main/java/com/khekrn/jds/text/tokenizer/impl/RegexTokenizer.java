@@ -15,9 +15,9 @@ public class RegexTokenizer implements Tokenizer<CharSequence> {
     private static final Pattern PATTERN = Pattern.compile("(\\w)+");
 
     /**
-     * <p> Tokenize the given text using regex pattern</p>
+     * <p> Tokenize the given com.khekrn.jds.text using regex pattern</p>
      *
-     * @param text input text to tokenize
+     * @param text input com.khekrn.jds.text to tokenize
      * @return tokenized {@link CharSequence} array
      */
     @Override

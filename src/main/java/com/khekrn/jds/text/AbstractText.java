@@ -23,13 +23,13 @@ public abstract class AbstractText implements IDataStructure {
     public abstract String name();
 
     /**
-     * <p> Generates the vector from text</p>
+     * <p> Generates the vector from com.khekrn.jds.text</p>
      *
-     * @param text input text
+     * @param text input com.khekrn.jds.text
      * @return character count vector in {@link Map} with {@link CharSequence} as key and {@link Integer} as value
      */
     public Map<CharSequence, Integer> generateVectorFromText(CharSequence text){
-        Validate.isTrue(StringUtils.isNotBlank(text), "Required text is missing");
+        Validate.isTrue(StringUtils.isNotBlank(text), "Required com.khekrn.jds.text is missing");
 
         final var vector = new HashMap<CharSequence, Integer>();
         var charArray = tokenizer.tokenize(text);
