@@ -1,5 +1,7 @@
 package com.khekrn.jds.text.tokenizer;
 
+import java.util.stream.Stream;
+
 /**
  * @author khekrn
  */
@@ -7,5 +9,5 @@ package com.khekrn.jds.text.tokenizer;
 @FunctionalInterface
 public interface Tokenizer<T> {
 
-    T[] tokenize(CharSequence text);
+    Stream<T> tokenize(CharSequence text);
 }

@@ -1,5 +1,6 @@
 package com.khekrn.jds.app;
 
+import com.khekrn.jds.queue.array.ArrayQueue;
 import com.khekrn.jds.text.distance.CosineDistance;
 import com.khekrn.jds.text.similarity.CosineSimilarity;
 
@@ -9,15 +10,14 @@ import com.khekrn.jds.text.similarity.CosineSimilarity;
 public class Main {
 
     public static void main(String[] args) {
-        var cosineSimilarity = CosineSimilarity.create();
+        var queue = ArrayQueue.<Integer>create(10);
 
-        String text1 = "i love java coding";
-        String text2 = "i love java java";
+        for(int i = 1; i <= 10; i++){
+            queue.enqueue(i);
+        }
 
-        var res = cosineSimilarity.apply(text1, text2);
-        System.out.println("Similarity = " + res);
-
-        var distance = CosineDistance.create();
-        System.out.println("Distance = " + distance.apply(text1, text2));
+        for (Integer integer : (Iterable<Integer>) queue) {
+            System.out.println(integer);
+        }
     }
 }
