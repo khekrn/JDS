@@ -68,7 +68,7 @@ class ArrayQueueTest {
 
     @org.junit.jupiter.api.Test
     @Order(3)
-    void peek() {
+    void peek() throws QueueEmptyException {
         queue.clear();
 
         queue = ArrayQueue.create();

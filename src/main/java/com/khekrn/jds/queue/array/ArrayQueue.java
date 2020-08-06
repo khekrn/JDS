@@ -64,7 +64,10 @@ public final class ArrayQueue<T> implements IQueue<T> {
     }
 
     @Override
-    public T peek() {
+    public T peek() throws QueueEmptyException {
+        if (isEmpty()) {
+            throw new QueueEmptyException("Empty queue operation not possible");
+        }
         return elements[head];
     }
 

@@ -1,2 +1,2 @@
 # JDS
-Algorithms and Data Structures implemented in Java &amp; JVM.
+Algorithms and Data Structures implemented in Java.
