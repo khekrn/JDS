@@ -1,6 +1,6 @@
 package com.khekrn.jds.app;
 
-import com.khekrn.jds.queue.array.ArrayPriorityQueue;
+import com.khekrn.jds.stack.array.ArrayStack;
 
 /**
  * @author khekrn
@@ -8,35 +8,17 @@ import com.khekrn.jds.queue.array.ArrayPriorityQueue;
 public class Main {
 
     public static void main(String args[] ) throws Exception {
-//        var pqueue = new PriorityQueue<Integer>(10, Comparator.reverseOrder());
-//        for(int i = 1; i <=5; i++){
-//            pqueue.add(i);
-//        }
-//
-//        for(int i = 10; i >= 6; i--){
-//            pqueue.add(i);
-//        }
-//
-//        var iter = pqueue.iterator();
-//        while (iter.hasNext()){
-//            System.out.println(iter.next());
-//        }
+        var stack = new ArrayStack<Integer>();
+        for(int i = 1; i <= 15; i++){
+            stack.push(i);
+        }
 
-        System.out.println("\n\n\n");
+        for(int i = 1; i <= 15; i++){
+            System.out.println("Peek = "+stack.peek()+" and Pop = "+stack.pop() +" and Size = "+stack.size());
+        }
 
-        var myqueue = ArrayPriorityQueue.<Integer>create(5);
-        myqueue.enqueue(15);
-        myqueue.enqueue(1);
-        myqueue.enqueue(2);
-        myqueue.enqueue(5);
-        myqueue.enqueue(10);
-
-
-        System.out.println(myqueue.dequeue());
-        System.out.println(myqueue.dequeue());
-        System.out.println(myqueue.dequeue());
-        System.out.println(myqueue.dequeue());
-        System.out.println(myqueue.dequeue());
-
+        for(int i = 1; i <= 15; i++){
+            stack.push(i);
+        }
     }
 }
